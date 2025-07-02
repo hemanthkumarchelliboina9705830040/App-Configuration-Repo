@@ -1,0 +1,5 @@
+build:
+  id: 1
+  name: Default
+  description: Default Git configuration
+  version: 1.0
