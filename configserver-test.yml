@@ -1,0 +1,5 @@
+build:
+  id: 3
+  name: Testing
+  description: Testing Git configuration for the configuration management
+  version: 1.3f
