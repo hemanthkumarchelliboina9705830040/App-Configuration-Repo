@@ -1,0 +1,10 @@
+Spring:
+  application:
+    name=ConfigurationTestManagement
+server:
+  port: 8082
+build:
+  id: 3
+  name: Testing
+  description: Testing configuration for the configuration management
+  version: 1.3f
