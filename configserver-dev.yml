@@ -1,5 +1,5 @@
 build:
   id: 2
-  name: Git Development Configuration Updated for cloud bus 
+  name: Git Development Configuration Updated for Spring cloud bus 
   description: Development Git configuration for the configuration management which has fast refresh rate
   version: 1.2f
