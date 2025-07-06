@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: Product-Microservices
   config:
     import: configserver:http://localhost:8888
   datasource:
