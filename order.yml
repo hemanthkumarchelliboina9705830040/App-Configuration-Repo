@@ -1,6 +1,5 @@
 
 spring:
-  application-name: Order-Microservice
   datasource:
     url: jdbc:postgresql://localhost:5432/Order_DataBase
     username: Hemanth
