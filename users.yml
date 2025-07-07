@@ -7,4 +7,4 @@ spring:
 server:
   port: 8082
 app:
-  message:"This is User Microservice from Git appliaction.yml config"
+  message: "This is User Microservice from Git appliaction.yml config"
