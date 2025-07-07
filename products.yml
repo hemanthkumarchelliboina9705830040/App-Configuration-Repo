@@ -17,4 +17,4 @@ server:
   port: 8081
 
 app:
-  message:"This is Product Microservice from Git appliaction.yml config"
+  message: "This is Product Microservice from Git appliaction.yml config"
