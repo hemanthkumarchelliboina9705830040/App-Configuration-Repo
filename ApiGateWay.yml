@@ -3,20 +3,20 @@ spring:
    gateway:
      routes:
        - id: product-service
-         uri: lb://PRODUCT-SERVICE
+         uri: lb://PRODUCTS
          predicates:
-           - Path=/products/**
+           - Path=/product/**
          filters:
            - "CircuitBreaker=name=E-CommerceCircuitBreaker"
-           - "RewritePath=/products(?<segment>/?.*),/api/products${segment}"
+           - "RewritePath=/product(?<segment>/?.*),/api/product${segment}"
        - id: user-service
-         uri: lb://USER-SERVICE
+         uri: lb://USERS
          predicates:
            - Path=/users/**
          filters:
            - "RewritePath=/users(?<segment>/?.*),/api/users${segment}"
        - id: order-service
-         uri: lb://ORDER-SERVICE
+         uri: lb://ORDERS
          predicates:
            - Path=/orders/**, /cart/**
          filters:
