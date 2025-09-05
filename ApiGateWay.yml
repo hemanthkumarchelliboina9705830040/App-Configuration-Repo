@@ -8,7 +8,7 @@ spring:
             - Path=/product/**
           filters:
             - "CircuitBreaker=name=E-CommerceCircuitBreaker"
-            - "RewritePath=/product(?<segment>/?.*),/api/product${segment}"
+            #- "RewritePath=/product(?<segment>/?.*),/api/product${segment}"
 
         - id: user-service
           uri: lb://USERS
