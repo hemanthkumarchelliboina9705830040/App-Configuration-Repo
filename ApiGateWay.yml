@@ -10,7 +10,7 @@ spring:
             - name: CircuitBreaker
               args:
                 name: E-CommerceCircuitBreaker
-                fallbackUri: forward:/fallback
+                fallbackUri: forward:/productServiceFallback
             - RewritePath=/product(?<segment>/?.*),/api/product${segment}
 
         - id: user-service
@@ -23,7 +23,8 @@ spring:
         - id: order-service
           uri: lb://ORDERS
           predicates:
-            - Path=/orders/**, /cart/**
+            - Path=/orders/**
+            - Path=/cart/**
           filters:
             - RewritePath=/(?<segment>.*),/api/${segment}
 
