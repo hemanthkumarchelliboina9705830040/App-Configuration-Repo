@@ -7,22 +7,26 @@ spring:
           predicates:
             - Path=/product/**
           filters:
-            - "CircuitBreaker=name=E-CommerceCircuitBreaker"
-            #- "RewritePath=/product(?<segment>/?.*),/api/product${segment}"
+            - name: CircuitBreaker
+              args:
+                name: E-CommerceCircuitBreaker
+                fallbackUri: forward:/fallback
+            - RewritePath=/product(?<segment>/?.*),/api/product${segment}
 
         - id: user-service
           uri: lb://USERS
           predicates:
             - Path=/users/**
           filters:
-            - "RewritePath=/users(?<segment>/?.*),/api/users${segment}"
+            - RewritePath=/users(?<segment>/?.*),/api/users${segment}
 
         - id: order-service
           uri: lb://ORDERS
           predicates:
-            - Path=/orders/**, /cart/**
+            - Path=/orders/**
+            - Path=/cart/**
           filters:
-            - "RewritePath=/(?<segment>.*),/api/${segment}"
+            - RewritePath=/(?<segment>.*),/api/${segment}
 
         - id: eureka-server
           uri: http://localhost:8761
@@ -35,6 +39,8 @@ spring:
           uri: http://localhost:8761
           predicates:
             - Path=/eureka/**
+          filters:
+            - SetPath=/
 
 management:
   endpoints:
