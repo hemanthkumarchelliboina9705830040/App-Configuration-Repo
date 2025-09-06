@@ -23,9 +23,13 @@ spring:
         - id: order-service
           uri: lb://ORDERS
           predicates:
-            - Path=/orders/**, /cart/**
+            - Path=/orders/**
+            - Path=/cart/**
           filters:
-            - RewritePath=/(?<segment>.*),/api/${segment}
+            - name: RewritePath
+              args:
+                regexp: /(?<segment>.*)
+                replacement: /api/${segment}
 
         - id: eureka-server
           uri: http://localhost:8761
