@@ -21,7 +21,7 @@ spring:
             - RewritePath=/users(?<segment>/?.*),/api/users${segment}
 
         - id: order-service
-         uri: lb://ORDER-SERVICE
+         uri: lb://ORDERS
          predicates:
            - Path=/orders/**, /cart/**
          filters:
