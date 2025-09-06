@@ -21,15 +21,11 @@ spring:
             - RewritePath=/users(?<segment>/?.*),/api/users${segment}
 
         - id: order-service
-          uri: lb://ORDERS
-          predicates:
-            - Path=/orders/**
-            - Path=/cart/**
-          filters:
-            - name: RewritePath
-              args:
-                regexp: /(?<segment>.*)
-                replacement: /api/${segment}
+         uri: lb://ORDER-SERVICE
+         predicates:
+           - Path=/orders/**, /cart/**
+         filters:
+           - "RewritePath=/(?<segment>.*),/api/${segment}"
 
         - id: eureka-server
           uri: http://localhost:8761
