@@ -28,7 +28,7 @@ rabbitmq:
   queue:
     name: order.queue
   routing:
-    key: order.traking
+    key: order.tracking
 
 app:
   message: "This is Order Microservice from Git appliaction.yml config"
