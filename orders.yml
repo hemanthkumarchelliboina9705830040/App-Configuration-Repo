@@ -12,7 +12,19 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-
+  
+  cloud:
+    stream:
+      bindings:
+        createOrder-out-0:
+          destination: order.exchange
+          contentType: application.json
+      rabbitmq:
+        bindings:
+          createOrder-out-0:
+            producer:
+              routing-key: order.tracking
+              
   rabbitmq:
     host: localhost
     port: 5672
