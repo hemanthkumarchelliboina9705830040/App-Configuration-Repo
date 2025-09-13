@@ -20,7 +20,7 @@ spring:
           destination: order.exchange
           contentType: application/json
           producer:
-            routing-key: order.tracking
+            routing-key: '''order.tracking'''
 
   rabbitmq:
     host: localhost
