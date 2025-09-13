@@ -23,7 +23,7 @@ spring:
         bindings:
           createOrder-out-0:
             producer:
-              routing-key: '''order.tracking'''
+              routing-key-expression: '''order.tracking'''
 
   rabbitmq:
     host: localhost
