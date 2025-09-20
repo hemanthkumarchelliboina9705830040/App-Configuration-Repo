@@ -51,8 +51,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8443/realms/E-Commerce%20Application
-
+          issuer-uri: issuer-uri: http://localhost:8443/realms/e-commerce-application
 management:
   endpoints:
     web:
