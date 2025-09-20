@@ -51,7 +51,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8443/realms/E-Commerce%20Application
+          issuer-uri: http://localhost:8443/realms/E-Commerce%20Application/protocol/openid-connect/certs
 management:
   endpoints:
     web:
