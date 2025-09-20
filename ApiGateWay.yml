@@ -46,12 +46,13 @@ spring:
             - Path=/eureka/**
           filters:
             - SetPath=/
-        
+            
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8443/realms/E-Commerce%20Application
+          jwk-set-uri: http://localhost:8443/realms/E-Commerce%20Application/protocol/openid-connect/certs
+
 management:
   endpoints:
     web:
