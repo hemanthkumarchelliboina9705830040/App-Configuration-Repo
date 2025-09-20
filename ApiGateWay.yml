@@ -18,7 +18,6 @@ spring:
                 methods: GET
             - RewritePath=/product(?<segment>/?.*),/api/product${segment}
 
-
         - id: user-service
           uri: lb://USERS
           predicates:
@@ -29,7 +28,8 @@ spring:
         - id: order-service
           uri: lb://ORDERS
           predicates:
-            - Path=/orders/**, /cart/**
+            - Path=/orders/**
+            - Path=/cart/**
           filters:
             - RewritePath=/(?<segment>.*),/api/${segment}
 
@@ -51,7 +51,8 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: issuer-uri: http://localhost:8443/realms/e-commerce-application
+          issuer-uri: http://localhost:8443/realms/e-commerce-application
+
 management:
   endpoints:
     web:
